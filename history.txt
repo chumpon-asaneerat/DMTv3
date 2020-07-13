@@ -8,8 +8,9 @@ Update 2020-07-13 #9
 Update 2020-07-13 #8
 -
 
+[commited]
 Update 2020-07-13 #7
--
+- Add reference assemblies for System.Data.SQLite and RepoDB.SQLLite.
 
 [commited]
 Update 2020-07-13 #6
