@@ -113,6 +113,8 @@
     <None Include="Old1\Models\Shifts\TSBShift.cs" />
     <None Include="Old1\Models\Users\User.cs" />
     <None Include="Old1\Models\Shifts\UserShift.cs" />
+    <Compile Include="ExtensionMethods\ModelExtensionMethods.cs" />
+    <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Old1\Services\LocalDbServer.cs" />
   </ItemGroup>
@@ -128,6 +130,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
