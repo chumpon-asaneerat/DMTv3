@@ -15,40 +15,40 @@ namespace DMT
                 public static string ApplicationName = @"DMT Toll Admin Application";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
             }
             public static class TOD
             {
                 public static string ApplicationName = @"DMT Toll of Duty Application";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
             }
             public static class Account
             {
                 public static string ApplicationName = @"DMT Toll Account Application";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
             }
             public static class PlazaConfig
             {
                 public static string ApplicationName = @"DMT TOD-TA Plaza Config";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
             }
             public static class PlazaSumulator
             {
                 public static string ApplicationName = @"DMT TOD-TA Plaza Simulator";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
             }
         }
         public static class WindowsService
@@ -61,8 +61,8 @@ namespace DMT
                 public static string ExecutableFileName = @"DMT.Plaza.Windows.Services.exe";
                 public static string Version = "1";
                 public static string Minor = "0";
-                public static string Build = "125";
-                public static DateTime LastUpdate = new DateTime(2020, 06, 13, 10, 00, 00);
+                public static string Build = "212";
+                public static DateTime LastUpdate = new DateTime(2020, 07, 14, 10, 00, 00);
 
                 public static class LocaWebServer
                 {
