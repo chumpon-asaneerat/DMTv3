@@ -93,6 +93,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2020-07-13", "2020-07-13", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Controls", "05.Controls", "{5570D542-428C-41D3-A40C-D218E20E6F1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.LocalWebServerFunctionTest", "10.Tests\04.LocalWebServerFunctionTest\04.LocalWebServerFunctionTest.csproj", "{83257B92-7C13-40CE-94AB-D0D13B89EBC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -155,6 +157,10 @@ Global
 		{E36D0D9B-20C7-4D66-9C13-5CFB7650805A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E36D0D9B-20C7-4D66-9C13-5CFB7650805A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E36D0D9B-20C7-4D66-9C13-5CFB7650805A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83257B92-7C13-40CE-94AB-D0D13B89EBC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83257B92-7C13-40CE-94AB-D0D13B89EBC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83257B92-7C13-40CE-94AB-D0D13B89EBC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83257B92-7C13-40CE-94AB-D0D13B89EBC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,6 +186,7 @@ Global
 		{4445A396-5E25-4D0F-9F8C-C1B79B270C1D} = {31036B49-95C1-4323-B52D-DC9956F8705E}
 		{FC5D4635-1E3D-42AD-976D-6FBF87C07AD8} = {31036B49-95C1-4323-B52D-DC9956F8705E}
 		{2BA98AF7-6468-4A24-8EAA-9779C7FF3808} = {FC5D4635-1E3D-42AD-976D-6FBF87C07AD8}
+		{83257B92-7C13-40CE-94AB-D0D13B89EBC4} = {CC5BA7C7-81C0-406E-8160-483A9394B5AE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9731A03E-799B-4488-994E-8D1962D6F7F2}

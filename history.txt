@@ -15,8 +15,9 @@ Update 2020-07-14 #1
 -
 
 --------------------------------------------------------------------------------------------
+[commited]
 Update 2020-07-13 #25
-- 
+- Add LocalWebServerFunctionTest project.
 
 [commited]
 Update 2020-07-13 #24
