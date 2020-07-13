@@ -10,6 +10,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{287F3787-0FED-43D2-8352-DE5755D40296}"
 	ProjectSection(SolutionItems) = preProject
 		Compile.note.txt = Compile.note.txt
+		controller-design.txt = controller-design.txt
+		database-design.txt = database-design.txt
 		history.txt = history.txt
 	EndProjectSection
 EndProject
@@ -88,6 +90,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2020-07-13", "2020-07-13", 
 	ProjectSection(SolutionItems) = preProject
 		20.Local.database\01.Backup\2020-07-13\TODxTA.db = 20.Local.database\01.Backup\2020-07-13\TODxTA.db
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05.Controls", "05.Controls", "{5570D542-428C-41D3-A40C-D218E20E6F1F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

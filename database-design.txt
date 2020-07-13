@@ -1,0 +1,226 @@
+---------------------------------------------------------------------------------------------
+TABLES (v3)
+------
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+TABLES (v2)
+------
+- TSB - OK
+  - TSBId [PK] (string MaxLength(10)) - OK
+  - NetworkId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - Active (bool) - (new) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- Plaza - OK
+  - PlazaId [PK] (string MaxLength(10)) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - PlazaNameEN (string MaxLength(100)) - OK
+  - PlazaNameTH (string MaxLength(100)) - OK
+  - Direction (string MaxLength(10)) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- Lane - OK
+  - PkId [PK] (int auto) - OK
+  - LandId (int) - OK
+  - LandId (string MaxLength(10)) - OK
+  - PlazaId (string MaxLength(10)) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - LaneType (string MaxLength(10)) -> (MTC/etc..) - OK
+  - LaneAbbr (string MaxLength(10)) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- Shift - OK
+  - ShiftId [PK] (int) - OK
+  - ShiftNameEN (string MaxLength(50)) - OK
+  - ShiftNameTH (string MaxLength(50)) - OK
+
+- Role - OK
+  - RoleId [PK] (string MaxLength(20)) - OK
+  - RoleNameEN (string MaxLength(50)) - OK
+  - RoleNameTH (string MaxLength(50)) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- User - OK
+  - UserId [PK] (string MaxLength(10)) - OK
+  - RoleId (string MaxLength(20)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - UserName (string MaxLength(50)) - OK
+  - Password (string MaxLength(20)) - OK
+  - CardId (string MaxLength(20)) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- Payment - OK
+  - PaymentId [PK] (string MaxLength(20)) -> (EMV/QR Code) - OK
+  - PaymentNameEN (string MaxLength(10)) - OK
+  - PaymentNameTH (string MaxLength(10)) - OK
+  - Status int -> (Active = 1/Inactive = 0/etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- Config - OK
+  - Key [PK] (string MaxLength(30)) - OK
+  - Value (string MaxLength(100)) - OK
+
+- TSBShift - OK
+  - TSBShiftId [PK] (int, Auto) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - ShiftId (int) - OK
+  - ShiftNameEN (string MaxLength(50)) - OK
+  - ShiftNameTH (string MaxLength(50)) - OK
+  - UserId (string MaxLength(10)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - Begin (DateTime) - OK
+  - End (DateTime) - OK
+  - Status int -> (1 = Sync, 0 = Unsync, etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- UserShift - OK
+  - UserShiftId [PK] (int, Auto) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - ShiftId (int) - OK
+  - ShiftNameEN (string MaxLength(50)) - OK
+  - ShiftNameTH (string MaxLength(50)) - OK
+  - UserId (string MaxLength(10)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - Begin (DateTime) - OK
+  - End (DateTime) - OK
+  - Status int -> (1 = Sync, 0 = Unsync, etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- LaneAttendance - OK
+  - PkId [PK] (Guid.NewID) - OK
+  - JobId (string MaxLength(20)) -> custom id from DMT. - OK
+  - TSBId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - LandId (int) - OK
+  - LaneId (string MaxLength(10)) - OK
+  - UserId (string MaxLength(10)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - Begin (DateTime) - OK
+  - End (DateTime) - OK
+  - Status int -> (1 = Sync, 0 = Unsync, etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- LanePayment - OK
+  - PkId [PK] (Guid.NewID) - OK
+  - ApproveCode (string MaxLength(20)) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - LandId (int) - OK
+  - LaneId (string MaxLength(10)) - OK
+  - UserId (string MaxLength(10)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - PaymentId (string MaxLength(20)) -> (EMV/QR Code) - OK
+  - PaymentNameEN (string MaxLength(10)) - OK
+  - PaymentNameTH (string MaxLength(10)) - OK
+  - PaymentDate (DateTime) - OK
+  - Amount (decimal) - OK
+  - Status int -> (1 = Sync, 0 = Unsync, etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+- RevenueEntry - OK
+  - PKId [PK] (Guid.NewID) - OK
+  - RevenueId (string MaxLength(20)) -> custom id from DMT. - OK
+  - EntryDate (Date) - OK
+  - RevenueDate (Date) - OK
+  - TSBId (string MaxLength(10)) - OK
+  - TSBNameEN (string MaxLength(100)) - OK
+  - TSBNameTH (string MaxLength(100)) - OK
+  - ShiftId (int) - OK
+  - ShiftNameEN (string MaxLength(50)) - OK
+  - ShiftNameTH (string MaxLength(50)) - OK
+  - UserId (string MaxLength(10)) - OK
+  - FullNameEN (string MaxLength(100)) - OK
+  - FullNameTH (string MaxLength(100)) - OK
+  - BagNo (string MaxLength(10)) - OK
+  - BeltNo (string MaxLength(20)) - OK
+
+  - TrafficST25 (int) - OK
+  - TrafficST50 (int) - OK
+  - TrafficBHT1 (int) - OK
+  - TrafficBHT2 (int) - OK
+  - TrafficBHT5 (int) - OK
+  - TrafficBHT10 (int) - OK
+  - TrafficBHT20 (int) - OK
+  - TrafficBHT50 (int) - OK
+  - TrafficBHT100 (int) - OK
+  - TrafficBHT500 (int) - OK
+  - TrafficBHT1000 (int) - OK
+  - TrafficBHTTotal (decimal) -> supports ST - OK
+  - TrafficRemark (string MaxLength(255)) - OK
+
+  - OtherBHTTotal (decimal) > supports ST - OK
+  - OtherRemark (string MaxLength(255)) - OK
+
+  - CouponUsageBHT30 (int) - OK
+  - CouponUsageBHT35 (int) - OK
+  - CouponUsageBHT75 (int) - OK
+  - CouponUsageBHT80 (int) - OK
+
+  - FreePassUsageClassA (int) - OK
+  - FreePassUsageOther (int) - OK
+
+  - CouponSoldBHT35 (int) - OK
+  - CouponSoldBHT35Factor (decimal) - OK
+  - CouponSoldBHT80 (int) - OK
+  - CouponSoldBHT80Factor (decimal) - OK
+  - CouponSoldBHT35Total (decimal) -> in BHT - OK
+  - CouponSoldBHT80Total (decimal) -> in BHT - OK
+  - CouponSoldBHTTotal (decimal) -> in BHT - OK
+
+  - Status int -> (1 = Sync, 0 = Unsync, etc..) - OK
+  - LastUpdate (DateTime) -> last time sync from DC - OK
+
+
+
+
+
+
+- AssetType
+  - PkId [PK] (int auto)
+  - AssetTypeId (string MaxLength(10))
+  - Category (string MaxLength(20)) -> Cash/Voucher.
+  - NameEN (string MaxLength(50))
+  - NameTH (string MaxLength(50))
+  - Value (decimal) -> BHT value used for calculate factor.
+
+- Credit
+
+- Coupon
+
+- Exchange (Transaction)
+  - PkId [PK] (string MaxLength(30), Guid.NewID)
+  - ExchangeId (string MaxLength(20))
+  - RequestDate (Date)
+
+- RevenueGroup
+  - 
+
+- RevenueGroupItem
+  - RevPkId [PK] (string MaxLength(30), Guid.NewID)
+  - SeqId (int) ???
+  - Category (string MaxLength(20)) => Traffic/Other/CouponUsage/CouponSold
+  - 

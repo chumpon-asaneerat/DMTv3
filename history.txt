@@ -15,8 +15,25 @@ Update 2020-07-14 #1
 -
 
 --------------------------------------------------------------------------------------------
-Update 2020-07-13 #20
+Update 2020-07-13 #25
 - 
+
+Update 2020-07-13 #24
+- 
+
+Update 2020-07-13 #23
+- 
+
+Update 2020-07-13 #22
+- 
+
+Update 2020-07-13 #21
+- 
+
+[commited]
+Update 2020-07-13 #20
+- Add controller-design.txt
+- Add database-design.txt
 
 [commited]
 Update 2020-07-13 #19
