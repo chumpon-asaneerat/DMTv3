@@ -78,8 +78,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20.Local.database", "20.Local.database", "{31036B49-95C1-4323-B52D-DC9956F8705E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Current", "00.Current", "{4445A396-5E25-4D0F-9F8C-C1B79B270C1D}"
+	ProjectSection(SolutionItems) = preProject
+		20.Local.database\00.Current\TODxTA.db = 20.Local.database\00.Current\TODxTA.db
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Backup", "01.Backup", "{FC5D4635-1E3D-42AD-976D-6FBF87C07AD8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2020-07-13", "2020-07-13", "{2BA98AF7-6468-4A24-8EAA-9779C7FF3808}"
+	ProjectSection(SolutionItems) = preProject
+		20.Local.database\01.Backup\2020-07-13\TODxTA.db = 20.Local.database\01.Backup\2020-07-13\TODxTA.db
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -167,6 +175,7 @@ Global
 		{E36D0D9B-20C7-4D66-9C13-5CFB7650805A} = {CC5BA7C7-81C0-406E-8160-483A9394B5AE}
 		{4445A396-5E25-4D0F-9F8C-C1B79B270C1D} = {31036B49-95C1-4323-B52D-DC9956F8705E}
 		{FC5D4635-1E3D-42AD-976D-6FBF87C07AD8} = {31036B49-95C1-4323-B52D-DC9956F8705E}
+		{2BA98AF7-6468-4A24-8EAA-9779C7FF3808} = {FC5D4635-1E3D-42AD-976D-6FBF87C07AD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9731A03E-799B-4488-994E-8D1962D6F7F2}
