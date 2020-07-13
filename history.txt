@@ -27,8 +27,9 @@ Update 2020-07-13 #18
 Update 2020-07-13 #17
 - 
 
+[commited]
 Update 2020-07-13 #16
-- 
+- Ported DMT.Plaza.Windows.Services project form DMTv2 and comment out all code.
 
 [commited]
 Update 2020-07-13 #15
