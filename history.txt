@@ -24,8 +24,10 @@ Update 2020-07-13 #14
 Update 2020-07-13 #13
 - 
 
+[commited]
 Update 2020-07-13 #12
-- 
+- Ported DMT.Local.WebServer project form DMTv2 and move to backup folder (Old1)
+- Ported DMT.Local.WebClient project form DMTv2 and move to backup folder (Old1)
 
 [commited]
 Update 2020-07-13 #11
