@@ -50,6 +50,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReportViewer", "ReportViewe
 		99.Tools\01.VSIX\ReportViewer\note.txt = 99.Tools\01.VSIX\ReportViewer\note.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11.Samples", "11.Samples", "{2C540656-561A-4488-8356-1DAC7747F632}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartcardM1Test", "11.Samples\SmartcardM1Test\SmartcardM1Test.csproj", "{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,10 @@ Global
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5148ED2A-41FA-409C-BB41-36806D98BF81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +97,7 @@ Global
 		{D708F914-BE57-43C0-A534-0021FA60DD8F} = {01E8070E-E87F-4A5D-91FE-05960267840C}
 		{D0918473-BAA7-4363-A60B-D77B9069F8D3} = {01E8070E-E87F-4A5D-91FE-05960267840C}
 		{A108321C-3584-4B0C-99CC-C117F301DD94} = {D708F914-BE57-43C0-A534-0021FA60DD8F}
+		{4C0B5727-1A0D-49AD-9BFE-BEE56DB81A53} = {2C540656-561A-4488-8356-1DAC7747F632}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9731A03E-799B-4488-994E-8D1962D6F7F2}
