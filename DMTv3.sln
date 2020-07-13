@@ -3,9 +3,40 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.NLib", "00.NLib", "{109665F9-FFA5-491F-B0F8-1D808177B825}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10.Tests", "10.Tests", "{CC5BA7C7-81C0-406E-8160-483A9394B5AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{287F3787-0FED-43D2-8352-DE5755D40296}"
+	ProjectSection(SolutionItems) = preProject
+		history.txt = history.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib", "00.NLib\NLib\NLib.csproj", "{41A9D6C0-C833-403F-9BC1-EECDC246A428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NLib.Reports", "00.NLib\NLib.Reports\NLib.Reports.csproj", "{5879D92A-F850-4A70-8D88-99D29F6A46F3}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{41A9D6C0-C833-403F-9BC1-EECDC246A428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41A9D6C0-C833-403F-9BC1-EECDC246A428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41A9D6C0-C833-403F-9BC1-EECDC246A428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41A9D6C0-C833-403F-9BC1-EECDC246A428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5879D92A-F850-4A70-8D88-99D29F6A46F3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{41A9D6C0-C833-403F-9BC1-EECDC246A428} = {109665F9-FFA5-491F-B0F8-1D808177B825}
+		{5879D92A-F850-4A70-8D88-99D29F6A46F3} = {109665F9-FFA5-491F-B0F8-1D808177B825}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9731A03E-799B-4488-994E-8D1962D6F7F2}
