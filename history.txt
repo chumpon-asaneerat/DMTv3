@@ -11,13 +11,14 @@ Update 2020-07-15 #3
 Update 2020-07-15 #2
 -
 
+[commited]
 Update 2020-07-15 #1
--
+- Update Old Models from v2.
+  - Change Transactions folder to Revenues folder.
+  - Add empty TSBCredit.cs
+  - Add empty UserCredit.cs
 
 --------------------------------------------------------------------------------------------
-Update 2020-07-14 #3
--
-
 [commited]
 Update 2020-07-14 #2
 - Prepare history.txt

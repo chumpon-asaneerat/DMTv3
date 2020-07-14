@@ -106,7 +106,7 @@
     <None Include="Old1\Models\LaneActivities\LaneAttendance.cs" />
     <None Include="Old1\Models\LaneActivities\LanePayment.cs" />
     <None Include="Old1\Models\Shifts\UserShiftRevenue.cs" />
-    <None Include="Old1\Models\Transactions\RevenueEntry.cs" />
+    <None Include="Old1\Models\Revenues\RevenueEntry.cs" />
     <None Include="Old1\Models\Users\Role.cs" />
     <None Include="Old1\Models\Shifts\Shift.cs" />
     <None Include="Old1\Models\Infrastructures\TSB.cs" />
@@ -116,6 +116,8 @@
     <Compile Include="ExtensionMethods\ModelExtensionMethods.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Models\Common\NQueries.cs" />
+    <None Include="Old1\Models\Credits\TSBCredit.cs" />
+    <None Include="Old1\Models\Credits\UserCredit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Old1\Services\LocalDbServer.cs" />
   </ItemGroup>
