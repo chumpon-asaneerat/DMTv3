@@ -12,6 +12,9 @@ Update 2020-07-15 #3
 [commited]
 Update 2020-07-15 #2 (master)
 - Add some file on master afer create new branch.
+[commited]
+Update 2020-07-15 #2 (BranchV1)
+- Add some txt file.
 
 [commited]
 Update 2020-07-15 #1
