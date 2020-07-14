@@ -8,8 +8,9 @@ Update 2020-07-15 #8
 Update 2020-07-15 #7
 -
 
+[commited]
 Update 2020-07-15 #6
--
+- Remove test files #2 (Previous commit not actual remove physical files).
 
 [commited]
 Update 2020-07-15 #5
