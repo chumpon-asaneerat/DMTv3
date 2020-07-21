@@ -12,6 +12,8 @@ using SQLiteNetExtensions.Extensions;
 using Newtonsoft.Json;
 using NLib;
 using NLib.Reflection;
+using System.ComponentModel;
+using System.Security.Cryptography;
 
 #endregion
 
@@ -32,6 +34,7 @@ namespace DMT.Models
         private string _FullNameTH = string.Empty;
         private string _UserName = string.Empty;
         private string _Password = string.Empty;
+        private string _PasswordMD5 = string.Empty;
         private string _CardId = string.Empty;
 
         private string _RoleId = string.Empty;
@@ -59,6 +62,8 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets UserId
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets UserId")]
         [PrimaryKey, MaxLength(10)]
         [PeropertyMapName("UserId")]
         public string UserId
@@ -79,6 +84,8 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets FullNameEN
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets FullNameEN")]
         [MaxLength(100)]
         [PeropertyMapName("FullNameEN")]
         public string FullNameEN
@@ -99,6 +106,8 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets FullNameTH
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets FullNameTH")]
         [MaxLength(100)]
         [PeropertyMapName("FullNameTH")]
         public string FullNameTH
@@ -119,6 +128,8 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets UserName
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets UserName")]
         [MaxLength(50)]
         [PeropertyMapName("UserName")]
         public string UserName
@@ -139,7 +150,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Password
         /// </summary>
-        [MaxLength(20)]
+        [Category("User")]
+        [Description("Gets or sets Password")]
+        [MaxLength(50)]
         [PeropertyMapName("Password")]
         public string Password
         {
@@ -157,8 +170,32 @@ namespace DMT.Models
             }
         }
         /// <summary>
+        /// Gets or sets MD5 Hash
+        /// </summary>
+        [Category("User")]
+        [Description("Gets or sets MD5 Hash")]
+        [MaxLength(50)]
+        [PeropertyMapName("PasswordMD5")]
+        public string PasswordMD5
+        {
+            get
+            {
+                return _PasswordMD5;
+            }
+            set
+            {
+                if (_PasswordMD5 != value)
+                {
+                    _PasswordMD5 = value;
+                    this.RaiseChanged("PasswordMD5");
+                }
+            }
+        }
+        /// <summary>
         /// Gets or sets CardId
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets CardId")]
         [MaxLength(20)]
         [PeropertyMapName("CardId")]
         public string CardId
@@ -185,6 +222,9 @@ namespace DMT.Models
         /// Gets or sets RoleId
         /// </summary>
         //[ForeignKey(typeof(Role)), MaxLength(10)]
+        [Category("Role")]
+        [Description("Gets or sets RoleId")]
+        [ReadOnly(true)]
         [MaxLength(20)]
         [PeropertyMapName("RoleId")]
         public string RoleId
@@ -205,6 +245,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets RoleNameEN
         /// </summary>
+        [Category("Role")]
+        [Description("Gets or sets RoleNameEN")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("RoleNameEN")]
         public virtual string RoleNameEN
@@ -225,6 +268,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets RoleNameTH
         /// </summary>
+        [Category("Role")]
+        [Description("Gets or sets RoleNameTH")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("RoleNameTH")]
         public virtual string RoleNameTH
@@ -250,6 +296,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Status (1 = Active, 0 = Inactive, etc..)
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
+        [ReadOnly(true)]
         [PeropertyMapName("Status")]
         public int Status
         {
@@ -269,6 +318,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets LastUpdated (Sync to DC).
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets LastUpdated (Sync to DC).")]
+        [ReadOnly(true)]
         [PeropertyMapName("LastUpdate")]
         public DateTime LastUpdate
         {
@@ -376,6 +428,7 @@ namespace DMT.Models
                 cmd += "     , Role.RoleNameEN, Role.RoleNameTH ";
                 cmd += "  FROM User, Role ";
                 cmd += " WHERE User.RoleId = Role.RoleId ";
+                cmd += "   AND User.UserId = ? ";
 
                 var ret = NQuery.Query<FKs>(cmd, userId).FirstOrDefault();
                 return (null != ret) ? ret.ToUser() : null;

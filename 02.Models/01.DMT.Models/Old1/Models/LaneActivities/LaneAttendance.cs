@@ -12,6 +12,7 @@ using SQLiteNetExtensions.Extensions;
 using Newtonsoft.Json;
 using NLib;
 using NLib.Reflection;
+using System.ComponentModel;
 
 #endregion
 
@@ -34,6 +35,11 @@ namespace DMT.Models
         private string _TSBId = string.Empty;
         private string _TSBNameEN = string.Empty;
         private string _TSBNameTH = string.Empty;
+
+        private string _PlazaGroupId = string.Empty;
+        private string _PlazaGroupNameEN = string.Empty;
+        private string _PlazaGroupNameTH = string.Empty;
+        private string _Direction = string.Empty;
 
         private string _PlazaId = string.Empty;
         private string _PlazaNameEN = string.Empty;
@@ -75,6 +81,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PKId
         /// </summary>
+        [Category("Common")]
+        [Description("Gets or sets PKId")]
+        [ReadOnly(true)]
         [PrimaryKey]
         [PeropertyMapName("PKId")]
         public Guid PKId
@@ -95,6 +104,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets JobId
         /// </summary>
+        [Category("Common")]
+        [Description("Gets or sets JobId")]
+        [ReadOnly(true)]
         [MaxLength(20)]
         [PeropertyMapName("JobId")]
         public string JobId
@@ -120,6 +132,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBId.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("TSBId")]
         public string TSBId
@@ -140,6 +155,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBNameEN.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBNameEN.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("TSBNameEN")]
         public virtual string TSBNameEN
@@ -160,6 +178,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBNameTH.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBNameTH.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("TSBNameTH")]
         public virtual string TSBNameTH
@@ -180,11 +201,111 @@ namespace DMT.Models
 
         #endregion
 
+        #region PlazaGroup
+
+        /// <summary>
+        /// Gets or sets PlazaGroupId.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupId.")]
+        [ReadOnly(true)]
+        [MaxLength(10)]
+        [PeropertyMapName("PlazaGroupId")]
+        public string PlazaGroupId
+        {
+            get
+            {
+                return _PlazaGroupId;
+            }
+            set
+            {
+                if (_PlazaGroupId != value)
+                {
+                    _PlazaGroupId = value;
+                    this.RaiseChanged("PlazaGroupId");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets PlazaGroupNameEN.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupNameEN.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("PlazaGroupNameEN")]
+        public virtual string PlazaGroupNameEN
+        {
+            get
+            {
+                return _PlazaGroupNameEN;
+            }
+            set
+            {
+                if (_PlazaGroupNameEN != value)
+                {
+                    _PlazaGroupNameEN = value;
+                    this.RaiseChanged("PlazaGroupNameEN");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets PlazaGroupNameTH.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupNameTH.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("PlazaGroupNameTH")]
+        public virtual string PlazaGroupNameTH
+        {
+            get
+            {
+                return _PlazaGroupNameTH;
+            }
+            set
+            {
+                if (_PlazaGroupNameTH != value)
+                {
+                    _PlazaGroupNameTH = value;
+                    this.RaiseChanged("PlazaGroupNameTH");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets Direction.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets Direction.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("Direction")]
+        public virtual string Direction
+        {
+            get
+            {
+                return _Direction;
+            }
+            set
+            {
+                if (_Direction != value)
+                {
+                    _Direction = value;
+                    this.RaiseChanged("Direction");
+                }
+            }
+        }
+
+        #endregion
+
         #region Plaza
 
         /// <summary>
         /// Gets or sets PlazaId.
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("PlazaId")]
         public string PlazaId
@@ -205,6 +326,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PlazaNameEN
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaNameEN")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PlazaNameEN")]
         public virtual string PlazaNameEN
@@ -225,6 +349,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PlazaNameTH
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaNameTH")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PlazaNameTH")]
         public virtual string PlazaNameTH
@@ -250,6 +377,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets LaneId
         /// </summary>
+        [Category("Lane")]
+        [Description("Gets or sets LaneId")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("LaneId")]
         public string LaneId
@@ -270,6 +400,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Lane No.
         /// </summary>
+        [Category("Lane")]
+        [Description("Gets or sets Lane No.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("LaneNo")]
         public virtual int LaneNo
@@ -295,6 +428,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets UserId
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets UserId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("UserId")]
         public string UserId
@@ -315,6 +451,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets FullNameEN
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets User FullName EN.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("FullNameEN")]
         public virtual string FullNameEN
@@ -335,6 +474,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets FullNameTH
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets User FullName TH.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("FullNameTH")]
         public virtual string FullNameTH
@@ -360,6 +502,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Begin Date.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets or sets Begin Date.")]
+        //[ReadOnly(true)]
         [PeropertyMapName("Begin")]
         public DateTime Begin
         {
@@ -380,6 +525,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets End Date.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets or sets End Date.")]
+        //[ReadOnly(true)]
         [PeropertyMapName("End")]
         public DateTime End
         {
@@ -400,6 +548,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets Begin Date String.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets Begin Date String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string BeginDateString
@@ -414,6 +565,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets End Date String.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets End Date String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string EndDateString
@@ -428,6 +582,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets Begin Time String.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets Begin Time String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string BeginTimeString
@@ -442,6 +599,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets End Time String.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets End Time String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string EndTimeString
@@ -453,6 +613,12 @@ namespace DMT.Models
             }
             set { }
         }
+        /// <summary>
+        /// Gets or sets Begin Date Time String.
+        /// </summary>
+        [Category("Shift")]
+        [Description("Gets or sets Begin Date Time String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string BeginDateTimeString
@@ -465,8 +631,11 @@ namespace DMT.Models
             set { }
         }
         /// <summary>
-        /// Gets End Time String.
+        /// Gets or sets End Date Time String.
         /// </summary>
+        [Category("Shift")]
+        [Description("Gets or sets End Date Time String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string EndDateTimeString
@@ -486,6 +655,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Revenue Date.
         /// </summary>
+        [Category("Revenue")]
+        [Description("Gets or sets Revenue Date.")]
+        //[ReadOnly(true)]
         [PeropertyMapName("RevenueDate")]
         public DateTime RevenueDate
         {
@@ -497,12 +669,51 @@ namespace DMT.Models
                     _RevenueDate = value;
                     // Raise event.
                     this.RaiseChanged("RevenueDate");
+                    this.RaiseChanged("RevenueDateString");
+                    this.RaiseChanged("RevenueDateTimeString");
                 }
             }
         }
         /// <summary>
+        /// Gets Revenue Date String.
+        /// </summary>
+        [Category("Revenue")]
+        [Description("Gets Revenue Date String.")]
+        [ReadOnly(true)]
+        [JsonIgnore]
+        [Ignore]
+        public string RevenueDateString
+        {
+            get
+            {
+                var ret = (this.RevenueDate == DateTime.MinValue) ? "" : this.RevenueDate.ToThaiDateTimeString("dd/MM/yyyy");
+                return ret;
+            }
+            set { }
+        }
+        /// <summary>
+        /// Gets Revenue Date Time String.
+        /// </summary>
+        [Category("Revenue")]
+        [Description("Gets Revenue Date Time String.")]
+        [ReadOnly(true)]
+        [JsonIgnore]
+        [Ignore]
+        public string RevenueDateTimeString
+        {
+            get
+            {
+                var ret = (this.RevenueDate == DateTime.MinValue) ? "" : this.RevenueDate.ToThaiDateTimeString("dd/MM/yyyy HH:mm:ss");
+                return ret;
+            }
+            set { }
+        }
+        /// <summary>
         /// Gets or sets RevenueId.
         /// </summary>
+        [Category("Revenue")]
+        [Description("Gets or sets RevenueId.")]
+        //[ReadOnly(true)]
         [MaxLength(20)]
         [PeropertyMapName("RevenueId")]
         public string RevenueId
@@ -526,6 +737,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
+        [ReadOnly(true)]
         [PeropertyMapName("Status")]
         public int Status
         {
@@ -545,6 +759,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets LastUpdated (Sync to DC).
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets LastUpdated (Sync to DC).")]
+        [ReadOnly(true)]
         [PeropertyMapName("LastUpdate")]
         public DateTime LastUpdate
         {
@@ -588,6 +805,41 @@ namespace DMT.Models
             {
                 get { return base.TSBNameTH; }
                 set { base.TSBNameTH = value; }
+            }
+
+            #endregion
+
+            #region PlazaGroup
+
+            /// <summary>
+            /// Gets or sets PlazaGroupNameEN.
+            /// </summary>
+            [MaxLength(100)]
+            [PeropertyMapName("PlazaGroupNameEN")]
+            public override string PlazaGroupNameEN
+            {
+                get { return base.PlazaGroupNameEN; }
+                set { base.PlazaGroupNameEN = value; }
+            }
+            /// <summary>
+            /// Gets or sets PlazaGroupNameTH.
+            /// </summary>
+            [MaxLength(100)]
+            [PeropertyMapName("PlazaGroupNameTH")]
+            public override string PlazaGroupNameTH
+            {
+                get { return base.PlazaGroupNameTH; }
+                set { base.PlazaGroupNameTH = value; }
+            }
+            /// <summary>
+            /// Gets or sets Direction.
+            /// </summary>
+            [MaxLength(10)]
+            [PeropertyMapName("Direction")]
+            public override string Direction
+            {
+                get { return base.Direction; }
+                set { base.Direction = value; }
             }
 
             #endregion
@@ -670,7 +922,7 @@ namespace DMT.Models
             if (null != supervisor) supervisor.AssignTo(inst);
             return inst;
         }
-        public static List<LaneAttendance> Search(UserShift shift, Plaza plaza, 
+        public static List<LaneAttendance> Search(UserShift shift, PlazaGroup plazaGroup, 
             DateTime revenueDate)
         {
             if (null == shift) return new List<LaneAttendance>();
@@ -680,24 +932,29 @@ namespace DMT.Models
 
                 cmd += "SELECT LaneAttendance.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
-                cmd += "  FROM LaneAttendance, TSB, Plaza, Lane, User ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
                 cmd += "   AND LaneAttendance.UserId = User.UserId ";
-                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
-                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.UserId = ? ";
                 cmd += "   AND (LaneAttendance.Begin >= ? AND LaneAttendance.Begin <= ?)";
                 cmd += "   AND ((LaneAttendance.End >= ? AND LaneAttendance.End <= ?) " +
                     "        OR  LaneAttendance.End = ?)";
-                if (null != plaza)
+                if (null != plazaGroup)
                 {
-                    cmd += "   AND LaneAttendance.PlazaId = ? ";
+                    cmd += "   AND LaneAttendance.PlazaGroupId = ? ";
                 }
 
                 if (revenueDate == DateTime.MinValue)
@@ -712,14 +969,14 @@ namespace DMT.Models
 
                 DateTime end = (shift.End == DateTime.MinValue) ? DateTime.Now : shift.End;
 
-                if (null != plaza)
+                if (null != plazaGroup)
                 {
                     return NQuery.Query<FKs>(cmd,
                         shift.UserId,
                         shift.Begin, end,
                         shift.Begin, end,
                         DateTime.MinValue,
-                        plaza.PlazaId,
+                        plazaGroup.PlazaGroupId,
                         revenueDate).ToList<LaneAttendance>();
                 }
                 else
@@ -733,6 +990,45 @@ namespace DMT.Models
                 }
             }
         }
+        public static List<LaneAttendance> Search(UserShift shift)
+        {
+            if (null == shift) return new List<LaneAttendance>();
+            lock (sync)
+            {
+                string cmd = string.Empty;
+
+                cmd += "SELECT LaneAttendance.* ";
+                cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
+                cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
+                cmd += "     , Lane.LaneNo ";
+                cmd += "     , User.FullNameEN, User.FullNameTH ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
+                cmd += "   AND LaneAttendance.UserId = User.UserId ";
+                cmd += "   AND LaneAttendance.UserId = ? ";
+                cmd += "   AND (LaneAttendance.Begin >= ? AND LaneAttendance.Begin <= ?)";
+                cmd += "   AND ((LaneAttendance.End >= ? AND LaneAttendance.End <= ?) " +
+                    "        OR  LaneAttendance.End = ?)";
+
+                DateTime end = (shift.End == DateTime.MinValue) ? DateTime.Now : shift.End;
+
+                return NQuery.Query<FKs>(cmd,
+                    shift.UserId,
+                    shift.Begin, end,
+                    shift.Begin, end,
+                    DateTime.MinValue).ToList<LaneAttendance>();
+            }
+        }
         public static List<LaneAttendance> Search(Lane lane)
         {
             if (null == lane) return new List<LaneAttendance>();
@@ -741,17 +1037,22 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LaneAttendance.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
-                cmd += "  FROM LaneAttendance, TSB, Plaza, Lane, User ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
                 cmd += "   AND LaneAttendance.UserId = User.UserId ";
-                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
-                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = ? ";
                 return NQuery.Query<FKs>(cmd, lane.LaneId).ToList<LaneAttendance>();
             }
@@ -764,17 +1065,22 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LaneAttendance.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
-                cmd += "  FROM LaneAttendance, TSB, Plaza, Lane, User ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
                 cmd += "   AND LaneAttendance.UserId = User.UserId ";
-                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
-                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = ? ";
                 cmd += "   AND LaneAttendance.End = ? ";
                 return NQuery.Query<FKs>(cmd, lane.LaneId,
@@ -789,21 +1095,57 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LaneAttendance.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
-                cmd += "  FROM LaneAttendance, TSB, Plaza, Lane, User ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
                 cmd += "   AND LaneAttendance.UserId = User.UserId ";
-                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
-                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LaneAttendance.Begin >= ? ";
                 cmd += "   AND LaneAttendance.End <= ? ";
                 return NQuery.Query<FKs>(cmd, date,
                     DateTime.MinValue).ToList<LaneAttendance>();
+            }
+        }
+        public static List<LaneAttendance> GetAllNotHasRevenueEntry()
+        {
+            lock (sync)
+            {
+                string cmd = string.Empty;
+                cmd += "SELECT LaneAttendance.* ";
+                cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
+                cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
+                cmd += "     , Lane.LaneNo ";
+                cmd += "     , User.FullNameEN, User.FullNameTH ";
+                cmd += "  FROM LaneAttendance, TSB, PlazaGroup, Plaza, Lane, User ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.TSBId = TSB.TSBId ";
+                cmd += "   AND LaneAttendance.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LaneAttendance.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LaneAttendance.LaneId = Lane.LaneId ";
+                cmd += "   AND LaneAttendance.UserId = User.UserId ";
+                cmd += "   AND TSB.Active = 1 ";
+                cmd += "   AND (LaneAttendance.RevenueDate = ?";
+                cmd += "    OR  LaneAttendance.RevenueId IS NULL ";
+                cmd += "    OR  LaneAttendance.RevenueId = ?)";
+                return NQuery.Query<FKs>(cmd, DateTime.MinValue,
+                    string.Empty).ToList<LaneAttendance>();
             }
         }
 

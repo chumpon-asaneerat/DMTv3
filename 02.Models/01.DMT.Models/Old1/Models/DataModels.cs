@@ -152,6 +152,39 @@ namespace DMT.Models
 
     partial class Search
     {
+        public class UserCredits
+        {
+            public class GetActive : NSearch<GetActive>
+            {
+                public User User { get; set; }
+                public PlazaGroup PlazaGroup { get; set; }
+
+                public static GetActive Create(User user, PlazaGroup plazGroup)
+                {
+                    var ret = new GetActive();
+                    ret.User = user;
+                    ret.PlazaGroup = plazGroup;
+                    return ret;
+                }
+            }
+            public class GetActiveById : NSearch<GetActive>
+            {
+                public string UserId { get; set; }
+                public string PlazaGroupId { get; set; }
+
+                public static GetActiveById Create(string userId, string plazGroupId)
+                {
+                    var ret = new GetActiveById();
+                    ret.UserId = userId;
+                    ret.PlazaGroupId = plazGroupId;
+                    return ret;
+                }
+            }
+        }
+    }
+
+    partial class Search
+    {
         public static class Lanes
         {
             public static class Current
@@ -198,15 +231,15 @@ namespace DMT.Models
                 public class ByUserShift : NSearch<ByUserShift>
                 {
                     public UserShift Shift { get; set; }
-                    public Plaza Plaza { get; set; }
+                    public PlazaGroup PlazaGroup { get; set; }
                     public DateTime RevenueDate { get; set; }
 
-                    public static ByUserShift Create(UserShift shift, Plaza plaza,
+                    public static ByUserShift Create(UserShift shift, PlazaGroup plazaGroup,
                         DateTime revenueDate)
                     {
                         var ret = new ByUserShift();
                         ret.Shift = shift;
-                        ret.Plaza = plaza;
+                        ret.PlazaGroup = plazaGroup;
                         ret.RevenueDate = revenueDate;
                         return ret;
                     }
@@ -273,13 +306,13 @@ namespace DMT.Models
             public class PlazaShift : NSearch<PlazaShift>
             {
                 public UserShift Shift { get; set; }
-                public Plaza Plaza { get; set; }
+                public PlazaGroup PlazaGroup { get; set; }
 
-                public static PlazaShift Create(UserShift shift, Plaza plaza)
+                public static PlazaShift Create(UserShift shift, PlazaGroup plazaGroup)
                 {
                     var ret = new PlazaShift();
                     ret.Shift = shift;
-                    ret.Plaza = plaza;
+                    ret.PlazaGroup = plazaGroup;
                     return ret;
                 }
             }

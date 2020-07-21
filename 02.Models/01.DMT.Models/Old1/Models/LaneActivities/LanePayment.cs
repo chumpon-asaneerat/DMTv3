@@ -12,6 +12,7 @@ using SQLiteNetExtensions.Extensions;
 using Newtonsoft.Json;
 using NLib;
 using NLib.Reflection;
+using System.ComponentModel;
 
 #endregion
 
@@ -34,6 +35,11 @@ namespace DMT.Models
         private string _TSBId = string.Empty;
         private string _TSBNameEN = string.Empty;
         private string _TSBNameTH = string.Empty;
+
+        private string _PlazaGroupId = string.Empty;
+        private string _PlazaGroupNameEN = string.Empty;
+        private string _PlazaGroupNameTH = string.Empty;
+        private string _Direction = string.Empty;
 
         private string _PlazaId = string.Empty;
         private string _PlazaNameEN = string.Empty;
@@ -76,6 +82,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PKId
         /// </summary>
+        [Category("Common")]
+        [Description("Gets or sets PKId")]
+        [ReadOnly(true)]
         [PrimaryKey]
         [PeropertyMapName("PKId")]
         public Guid PKId
@@ -96,6 +105,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Approve Code.
         /// </summary>
+        [Category("Common")]
+        [Description("Gets or sets Approve Code.")]
+        //[ReadOnly(true)]
         [MaxLength(20)]
         [PeropertyMapName("ApproveCode")]
         public string ApproveCode
@@ -121,6 +133,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBId.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("TSBId")]
         public string TSBId
@@ -141,6 +156,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBNameEN.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBNameEN.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("TSBNameEN")]
         public virtual string TSBNameEN
@@ -161,6 +179,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets TSBNameTH.
         /// </summary>
+        [Category("TSB")]
+        [Description("Gets or sets TSBNameTH.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("TSBNameTH")]
         public virtual string TSBNameTH
@@ -181,11 +202,111 @@ namespace DMT.Models
 
         #endregion
 
+        #region PlazaGroup
+
+        /// <summary>
+        /// Gets or sets PlazaGroupId.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupId.")]
+        [ReadOnly(true)]
+        [MaxLength(10)]
+        [PeropertyMapName("PlazaGroupId")]
+        public string PlazaGroupId
+        {
+            get
+            {
+                return _PlazaGroupId;
+            }
+            set
+            {
+                if (_PlazaGroupId != value)
+                {
+                    _PlazaGroupId = value;
+                    this.RaiseChanged("PlazaGroupId");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets PlazaGroupNameEN.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupNameEN.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("PlazaGroupNameEN")]
+        public virtual string PlazaGroupNameEN
+        {
+            get
+            {
+                return _PlazaGroupNameEN;
+            }
+            set
+            {
+                if (_PlazaGroupNameEN != value)
+                {
+                    _PlazaGroupNameEN = value;
+                    this.RaiseChanged("PlazaGroupNameEN");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets PlazaGroupNameTH.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets PlazaGroupNameTH.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("PlazaGroupNameTH")]
+        public virtual string PlazaGroupNameTH
+        {
+            get
+            {
+                return _PlazaGroupNameTH;
+            }
+            set
+            {
+                if (_PlazaGroupNameTH != value)
+                {
+                    _PlazaGroupNameTH = value;
+                    this.RaiseChanged("PlazaGroupNameTH");
+                }
+            }
+        }
+        /// <summary>
+        /// Gets or sets Direction.
+        /// </summary>
+        [Category("Plaza Group")]
+        [Description("Gets or sets Direction.")]
+        [ReadOnly(true)]
+        [Ignore]
+        [PeropertyMapName("Direction")]
+        public virtual string Direction
+        {
+            get
+            {
+                return _Direction;
+            }
+            set
+            {
+                if (_Direction != value)
+                {
+                    _Direction = value;
+                    this.RaiseChanged("Direction");
+                }
+            }
+        }
+
+        #endregion
+
         #region Plaza
 
         /// <summary>
         /// Gets or sets PlazaId.
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("PlazaId")]
         public string PlazaId
@@ -206,6 +327,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PlazaNameEN
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaNameEN")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PlazaNameEN")]
         public virtual string PlazaNameEN
@@ -226,6 +350,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PlazaNameTH
         /// </summary>
+        [Category("Plaza")]
+        [Description("Gets or sets PlazaNameTH")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PlazaNameTH")]
         public virtual string PlazaNameTH
@@ -251,6 +378,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets LaneId
         /// </summary>
+        [Category("Lane")]
+        [Description("Gets or sets LaneId")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("LaneId")]
         public string LaneId
@@ -271,6 +401,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Lane No.
         /// </summary>
+        [Category("Lane")]
+        [Description("Gets or sets Lane No.")]
+        [ReadOnly(true)]
         [PeropertyMapName("LaneNo")]
         public virtual int LaneNo
         {
@@ -295,6 +428,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets UserId
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets UserId.")]
+        [ReadOnly(true)]
         [MaxLength(10)]
         [PeropertyMapName("UserId")]
         public string UserId
@@ -315,6 +451,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets FullNameEN
         /// </summary>
+        [Category("User")]
+        [Description("Gets or sets User FullName EN.")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("FullNameEN")]
         public virtual string FullNameEN
@@ -360,6 +499,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PaymentId
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets or sets PaymentId")]
+        [ReadOnly(true)]
         [MaxLength(20)]
         [PeropertyMapName("PaymentId")]
         public string PaymentId
@@ -380,6 +522,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PaymentNameEN
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets or sets PaymentNameEN")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PaymentNameEN")]
         public virtual string PaymentNameEN
@@ -400,6 +545,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets PaymentNameTH
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets or sets PaymentNameTH")]
+        [ReadOnly(true)]
         [Ignore]
         [PeropertyMapName("PaymentNameTH")]
         public virtual string PaymentNameTH
@@ -425,6 +573,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Payment Date.
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets or sets Payment Date.")]
+        //[ReadOnly(true)]
         [PeropertyMapName("PaymentDate")]
         public DateTime PaymentDate
         {
@@ -442,8 +593,11 @@ namespace DMT.Models
             }
         }
         /// <summary>
-        /// Gets Begin Date String.
+        /// Gets Payment Date String.
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets Payment Date String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string PaymentDateString
@@ -456,8 +610,11 @@ namespace DMT.Models
             set { }
         }
         /// <summary>
-        /// Gets Begin Time String.
+        /// Gets Payment Time String.
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets Payment Time String.")]
+        [ReadOnly(true)]
         [JsonIgnore]
         [Ignore]
         public string PaymentTimeString
@@ -472,6 +629,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Amount.
         /// </summary>
+        [Category("Payment")]
+        [Description("Gets or sets Amount.")]
+        //[ReadOnly(true)]
         [PeropertyMapName("Amount")]
         public decimal Amount
         {
@@ -494,6 +654,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets Status (1 = Sync, 0 = Unsync, etc..)
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets Status (1 = Sync, 0 = Unsync, etc..)")]
+        [ReadOnly(true)]
         [PeropertyMapName("Status")]
         public int Status
         {
@@ -513,6 +676,9 @@ namespace DMT.Models
         /// <summary>
         /// Gets or sets LastUpdated (Sync to DC).
         /// </summary>
+        [Category("DataCenter")]
+        [Description("Gets or sets LastUpdated (Sync to DC).")]
+        [ReadOnly(true)]
         [PeropertyMapName("LastUpdate")]
         public DateTime LastUpdate
         {
@@ -556,6 +722,41 @@ namespace DMT.Models
             {
                 get { return base.TSBNameTH; }
                 set { base.TSBNameTH = value; }
+            }
+
+            #endregion
+
+            #region PlazaGroup
+
+            /// <summary>
+            /// Gets or sets PlazaGroupNameEN.
+            /// </summary>
+            [MaxLength(100)]
+            [PeropertyMapName("PlazaGroupNameEN")]
+            public override string PlazaGroupNameEN
+            {
+                get { return base.PlazaGroupNameEN; }
+                set { base.PlazaGroupNameEN = value; }
+            }
+            /// <summary>
+            /// Gets or sets PlazaGroupNameTH.
+            /// </summary>
+            [MaxLength(100)]
+            [PeropertyMapName("PlazaGroupNameTH")]
+            public override string PlazaGroupNameTH
+            {
+                get { return base.PlazaGroupNameTH; }
+                set { base.PlazaGroupNameTH = value; }
+            }
+            /// <summary>
+            /// Gets or sets Direction.
+            /// </summary>
+            [MaxLength(10)]
+            [PeropertyMapName("Direction")]
+            public override string Direction
+            {
+                get { return base.Direction; }
+                set { base.Direction = value; }
             }
 
             #endregion
@@ -675,18 +876,23 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LanePayment.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
                 cmd += "     , Payment.PaymentNameEN, User.PaymentNameTH ";
-                cmd += "  FROM LanePayment, TSB, Plaza, Lane, User, Payment ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LanePayment, TSB, PlazaGroup, Plaza, Lane, User, Payment ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
+                cmd += "   AND LanePayment.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.LaneId = Lane.LaneId ";
                 cmd += "   AND LanePayment.UserId = User.UserId ";
-                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
-                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.PaymentId = Payment.PaymentId ";
                 cmd += "   AND LanePayment.Begin >= ? ";
                 cmd += "   AND LanePayment.End <= ? ";
@@ -702,18 +908,23 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LanePayment.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
                 cmd += "     , Payment.PaymentNameEN, User.PaymentNameTH ";
-                cmd += "  FROM LanePayment, TSB, Plaza, Lane, User, Payment ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LanePayment, TSB, PlazaGroup, Plaza, Lane, User, Payment ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
+                cmd += "   AND LanePayment.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.LaneId = Lane.LaneId ";
                 cmd += "   AND LanePayment.UserId = User.UserId ";
-                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
-                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.PaymentId = Payment.PaymentId ";
                 cmd += "   AND LanePayment.LaneId = ? ";
                 return NQuery.Query<FKs>(cmd, lane.LaneId).ToList<LanePayment>();
@@ -727,18 +938,23 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LanePayment.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
                 cmd += "     , Payment.PaymentNameEN, User.PaymentNameTH ";
-                cmd += "  FROM LanePayment, TSB, Plaza, Lane, User, Payment ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LanePayment, TSB, PlazaGroup, Plaza, Lane, User, Payment ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
+                cmd += "   AND LanePayment.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.LaneId = Lane.LaneId ";
                 cmd += "   AND LanePayment.UserId = User.UserId ";
-                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
-                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.PaymentId = Payment.PaymentId ";
                 cmd += "   AND LanePayment.LaneId = ? ";
                 cmd += "   AND LanePayment.End = ? ";
@@ -754,18 +970,23 @@ namespace DMT.Models
                 string cmd = string.Empty;
                 cmd += "SELECT LanePayment.* ";
                 cmd += "     , TSB.TSBNameEN, TSB.TSBNameTH ";
+                cmd += "     , PlazaGroup.PlazaGroupNameEN, PlazaGroup.PlazaGroupNameTH, PlazaGroup.Direction ";
                 cmd += "     , Plaza.PlazaNameEN, Plaza.PlazaNameTH ";
                 cmd += "     , Lane.LaneNo ";
                 cmd += "     , User.FullNameEN, User.FullNameTH ";
                 cmd += "     , Payment.PaymentNameEN, User.PaymentNameTH ";
-                cmd += "  FROM LanePayment, TSB, Plaza, Lane, User, Payment ";
-                cmd += " WHERE Lane.TSBId = TSB.TSBId ";
-                cmd += "   AND Plaza.TSBId = Plaza.TSBId ";
+                cmd += "  FROM LanePayment, TSB, PlazaGroup, Plaza, Lane, User, Payment ";
+                cmd += " WHERE PlazaGroup.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.TSBId = TSB.TSBId ";
+                cmd += "   AND Plaza.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND Lane.TSBId = TSB.TSBId ";
+                cmd += "   AND Lane.PlazaGroupId = PlazaGroup.PlazaGroupId ";
                 cmd += "   AND Lane.PlazaId = Plaza.PlazaId ";
+                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
+                cmd += "   AND LanePayment.PlazaGroupId = PlazaGroup.PlazaGroupId ";
+                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.LaneId = Lane.LaneId ";
                 cmd += "   AND LanePayment.UserId = User.UserId ";
-                cmd += "   AND LanePayment.TSBId = TSB.TSBId ";
-                cmd += "   AND LanePayment.PlazaId = Plaza.PlazaId ";
                 cmd += "   AND LanePayment.PaymentId = Payment.PaymentId ";
                 cmd += " WHERE LanePayment.Begin >= ? ";
                 cmd += "   AND LanePayment.End <= ? ";
