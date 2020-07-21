@@ -2,8 +2,10 @@
 Update 2020-07-21 #3
 -
 
+[commited]
 Update 2020-07-21 #2
--
+- Update Old Models set build action to None.
+- Remove unused Old Model files.
 
 [commited]
 Update 2020-07-21 #1

@@ -116,8 +116,15 @@
     <Compile Include="ExtensionMethods\ModelExtensionMethods.cs" />
     <Compile Include="Models\Common\DMTModelBase.cs" />
     <Compile Include="Models\Common\NQueries.cs" />
-    <None Include="Old1\Models\Credits\TSBCredit.cs" />
-    <None Include="Old1\Models\Credits\UserCredit.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBAdditionBalance.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBAdditionTransaction.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBCouponBalance.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBCouponTransaction.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBCreditBalance.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\TSBCreditTransaction.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\UserCredit.cs" />
+    <None Include="Old1\Models\CreditsAndCoupons\UserCreditTransaction.cs" />
+    <None Include="Old1\Models\Infrastructures\PlazaGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="Old1\Services\LocalDbServer.cs" />
   </ItemGroup>
